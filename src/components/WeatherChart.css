@@ -1,0 +1,258 @@
+/* WeatherChart Component Styles */
+.weather-chart {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  animation: fadeInUp 0.8s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Chart Header */
+.chart-header {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.chart-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.chart-subtitle {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Chart Wrapper */
+.chart-wrapper {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* Chart Footer */
+.chart-footer {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 20px;
+}
+
+.chart-note {
+  font-size: 0.8rem;
+  color: #95a5a6;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Chart Placeholder */
+.chart-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+  border-radius: 15px;
+  border: 2px dashed rgba(102, 126, 234, 0.2);
+  margin: 20px 0;
+}
+
+.chart-placeholder p {
+  color: #7f8c8d;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+/* Chart Type Selector */
+.chart-type-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.chart-type-btn {
+  padding: 8px 16px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+  text-transform: capitalize;
+}
+
+.chart-type-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.2);
+}
+
+.chart-type-btn.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-color: #667eea;
+  color: white;
+  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+/* Chart Loading State */
+.chart-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  gap: 15px;
+}
+
+.chart-loading-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.chart-loading p {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .weather-chart {
+    padding: 20px;
+    margin: 15px 0;
+  }
+  
+  .chart-title {
+    font-size: 1.3rem;
+  }
+  
+  .chart-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .chart-wrapper {
+    height: 250px;
+  }
+  
+  .chart-type-selector {
+    gap: 8px;
+  }
+  
+  .chart-type-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    min-width: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-chart {
+    padding: 15px;
+    border-radius: 15px;
+  }
+  
+  .chart-title {
+    font-size: 1.2rem;
+  }
+  
+  .chart-subtitle {
+    font-size: 0.75rem;
+  }
+  
+  .chart-wrapper {
+    height: 200px;
+  }
+  
+  .chart-type-selector {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chart-type-btn {
+    width: 100%;
+    max-width: 150px;
+    padding: 8px 16px;
+  }
+  
+  .chart-placeholder {
+    height: 150px;
+  }
+  
+  .chart-placeholder p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .weather-chart {
+    background: rgba(44, 62, 80, 0.95);
+    color: #ecf0f1;
+  }
+  
+  .chart-title {
+    color: #ecf0f1;
+  }
+  
+  .chart-subtitle {
+    color: #bdc3c7;
+  }
+  
+  .chart-note {
+    color: #95a5a6;
+  }
+  
+  .chart-placeholder {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-color: rgba(102, 126, 234, 0.3);
+  }
+  
+  .chart-placeholder p {
+    color: #bdc3c7;
+  }
+}
